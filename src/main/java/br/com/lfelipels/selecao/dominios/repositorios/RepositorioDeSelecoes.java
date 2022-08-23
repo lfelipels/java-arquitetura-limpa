@@ -1,8 +1,12 @@
 package br.com.lfelipels.selecao.dominios.repositorios;
 
 import br.com.lfelipels.selecao.dominios.entidades.Selecao;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface RepositorioDeSelecoes {
-
-    public void salvar(Selecao selecao);
+@Repository
+public interface RepositorioDeSelecoes extends JpaRepository<Selecao, Integer> {
+    public default void salvar(Selecao selecao) {
+        this.save(selecao);
+    }
 }

@@ -31,6 +31,7 @@ public class Selecao {
     @Column(nullable = true)
     private LocalDate dataInicio;
 
+    @Transient
     private List<OfertaCurso> ofertas;
 
     public Selecao() {
@@ -81,6 +82,14 @@ public class Selecao {
 
     public String getNome() {
         return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setResumo(String resumo) {
+        this.resumo = resumo;
     }
 
     public String getResumo() {
